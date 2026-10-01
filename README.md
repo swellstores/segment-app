@@ -58,7 +58,7 @@ All credentials and options are in **Apps → Segment → Settings** (`settings/
 | Setting | ID | Default | Description |
 | --- | --- | --- | --- |
 | Segment write key | `write_key` | — | Required. Write key of the Segment source that should receive the events. |
-| Segment region | `region` | `us` | `us` → `https://api.segment.io`, `eu` → `https://events.eu1.segmentapis.com`. Must match your Segment workspace region. |
+| Segment region | `region` | `us` | `us` → `https://api.segment.io`, `eu` → `https://events.eu1.segmentapis.com`. Must match your Segment workspace region; see [Which region am I in?](#which-region-am-i-in). |
 | Enabled | `enabled` | on | Turn off to pause sending. |
 | Events → *group* | `events_<group>` | none | Checkbox list per group (see table above). Only checked events are sent. |
 
@@ -68,9 +68,34 @@ Functions read these with `await req.swell.settings()` under the `segment` key.
 
 1. In Segment, go to **Connections → Sources → Add Source** and add an **HTTP API** source (or use an existing server-side source).
 2. Open the source's **Settings → API Keys** and copy the **Write Key**.
+
+   ![Segment API Keys](assets/screenshots/segment-write-key.png)
 3. Install the app in Swell and open **Apps → Segment → Settings**.
-4. Paste the write key, pick the region of your Segment workspace, and check the events you want to send.
-5. Save. Trigger an event (for example, create a cart or place a test order) and check **Source → Debugger** in Segment.
+4. Paste the write key, pick the region of your Segment workspace (US unless you arranged EU data residency; see below), and keep **Enabled** on.
+
+   ![App settings](assets/screenshots/settings.png)
+5. Check the events you want to send, then **Save settings**.
+
+   ![Event selection](assets/screenshots/events.png)
+6. Trigger an event (for example, create a customer or place a test order) and check **Source → Debugger** in Segment.
+
+   ![Segment Debugger](assets/screenshots/segment-debugger.png)
+
+### Which region am I in?
+
+Segment does not show the region anywhere in workspace or source settings. It is the workspace's **Data processing region** (US West or EU West), chosen once when the workspace is created and never changeable afterwards ([Segment: Regional Segment](https://segment.com/docs/guides/regional-segment/)).
+
+- **US is the default.** EU workspaces can only be created after your Segment account executive enables EU data residency for your account. If nobody arranged that, your workspace is US: leave **Segment region** on **US**.
+- **Test it.** Send a test event with your write key, then look for it in **Source → Debugger**:
+
+  ```sh
+  curl -u '<write_key>:' https://api.segment.io/v1/track \
+    -H 'Content-Type: application/json' \
+    -d '{"userId":"region-test","event":"Region Test"}'
+  ```
+
+  If it is rejected or never shows up, repeat with `https://events.eu1.segmentapis.com/v1/track`; if that one arrives, set **Segment region** to **EU**.
+- **Wrong region:** since April 3, 2025 Segment rejects data sent to the other region's endpoint. In this app that shows up in the function logs as `Segment: '<event>' rejected`; the event is not retried.
 
 If you used the built-in Segment integration, turn it off in **Settings → Integrations** after enabling the app, or every event will be sent twice.
 

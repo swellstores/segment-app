@@ -7,21 +7,27 @@
   "permissions": [],
   "images": [
     {
+      "id": "segment-write-key",
+      "title": "Copy your Segment write key",
+      "description": "In Segment, open your source's Settings \u2192 API Keys and copy the Write Key.",
+      "image_src": "assets/screenshots/segment-write-key.png"
+    },
+    {
       "id": "settings",
-      "title": "Connect with your write key",
-      "description": "Paste your Segment source write key and pick the region of your workspace.",
+      "title": "Connect the app",
+      "description": "Paste the write key in the app settings and pick your Segment region (US unless you arranged EU data residency).",
       "image_src": "assets/screenshots/settings.png"
     },
     {
       "id": "events",
       "title": "Choose which events to send",
-      "description": "Select store events by model: orders, carts, accounts, products, subscriptions and more.",
+      "description": "Tick the store events to forward, grouped by model. Nothing is sent until you select events.",
       "image_src": "assets/screenshots/events.png"
     },
     {
       "id": "segment-debugger",
-      "title": "Events in Segment",
-      "description": "Events arrive in Segment as readable names like Order Paid and Cart Converted, with the full record as properties.",
+      "title": "See events arrive in Segment",
+      "description": "Events arrive in the Segment Debugger as readable names like Account Created, with the record as properties.",
       "image_src": "assets/screenshots/segment-debugger.png"
     }
   ]
