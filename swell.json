@@ -1,38 +1,38 @@
 {
-  "description": "Send store events to Segment automatically",
-  "id": "segment",
-  "name": "Segment",
-  "type": "integration",
-  "version": "1.0.0",
-  "permissions": [],
-  "support_email": "support@swell.is",
-  "integrations": [
-    "segment"
-  ],
-  "images": [
-    {
-      "id": "segment-write-key",
-      "title": "Copy your Segment write key",
-      "description": "In Segment, open your source's Settings \u2192 API Keys and copy the Write Key.",
-      "image_src": "assets/screenshots/segment-write-key.png"
-    },
-    {
-      "id": "settings",
-      "title": "Connect the app",
-      "description": "Paste the write key in the app settings and pick your Segment region (US unless you arranged EU data residency).",
-      "image_src": "assets/screenshots/settings.png"
-    },
-    {
-      "id": "events",
-      "title": "Choose which events to send",
-      "description": "Tick the store events to forward, grouped by model. Nothing is sent until you select events.",
-      "image_src": "assets/screenshots/events.png"
-    },
-    {
-      "id": "segment-debugger",
-      "title": "See events arrive in Segment",
-      "description": "Events arrive in the Segment Debugger as readable names like Account Created, with the record as properties.",
-      "image_src": "assets/screenshots/segment-debugger.png"
-    }
-  ]
+	"description": "Send store events to Segment automatically",
+	"id": "segment",
+	"name": "Segment",
+	"type": "integration",
+	"version": "1.0.0",
+	"permissions": [],
+	"support_email": "support@swell.is",
+	"integrations": [
+		"segment"
+	],
+	"images": [
+		{
+			"id": "segment-write-key",
+			"title": "Copy your Segment write key",
+			"description": "In Segment, open your source's Settings → API Keys and copy the Write Key.",
+			"image_src": "assets/screenshots/segment-write-key.png"
+		},
+		{
+			"id": "settings",
+			"title": "Connect the app",
+			"description": "Paste the write key in the app settings and pick your Segment region (US unless you arranged EU data residency).",
+			"image_src": "assets/screenshots/settings.png"
+		},
+		{
+			"id": "events",
+			"title": "Choose which events to send",
+			"description": "Tick the store events to forward, grouped by model. Nothing is sent until you select events.",
+			"image_src": "assets/screenshots/events.png"
+		},
+		{
+			"id": "segment-debugger",
+			"title": "See events arrive in Segment",
+			"description": "Events arrive in the Segment Debugger as readable names like Account Created, with the record as properties.",
+			"image_src": "assets/screenshots/segment-debugger.png"
+		}
+	]
 }
