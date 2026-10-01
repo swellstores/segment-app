@@ -1,0 +1,474 @@
+{
+  "$schema": "https://json.swell.store/setting.json",
+  "label": "Segment",
+  "description": "Send store events to Segment, then on to Google Analytics, Intercom, HubSpot and other Segment destinations.",
+  "fields": [
+    {
+      "id": "write_key",
+      "label": "Segment write key",
+      "type": "short_text",
+      "required": true,
+      "description": "Find and enter the write key from your Segment account (Connections \u2192 Sources \u2192 your source \u2192 Settings \u2192 API Keys)."
+    },
+    {
+      "id": "region",
+      "label": "Segment region",
+      "type": "select",
+      "default": "us",
+      "description": "Region of your Segment workspace.",
+      "options": [
+        {
+          "value": "us",
+          "label": "US (api.segment.io)"
+        },
+        {
+          "value": "eu",
+          "label": "EU (events.eu1.segmentapis.com)"
+        }
+      ]
+    },
+    {
+      "id": "enabled",
+      "label": "Enabled",
+      "type": "boolean",
+      "ui": "toggle",
+      "default": true,
+      "description": "Turn off to pause sending events without losing your configuration."
+    },
+    {
+      "type": "field_group",
+      "label": "Events",
+      "description": "Select the store events to send to Segment. Nothing is sent until at least one event is selected.",
+      "fields": [
+        {
+          "id": "events_account",
+          "label": "Account",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "account.created",
+              "label": "account.created"
+            },
+            {
+              "value": "account.updated",
+              "label": "account.updated"
+            },
+            {
+              "value": "account.deleted",
+              "label": "account.deleted"
+            },
+            {
+              "value": "account.card.created",
+              "label": "account.card.created"
+            },
+            {
+              "value": "account.card.updated",
+              "label": "account.card.updated"
+            },
+            {
+              "value": "account.card.deleted",
+              "label": "account.card.deleted"
+            },
+            {
+              "value": "account.address.created",
+              "label": "account.address.created"
+            },
+            {
+              "value": "account.address.updated",
+              "label": "account.address.updated"
+            },
+            {
+              "value": "account.address.deleted",
+              "label": "account.address.deleted"
+            },
+            {
+              "value": "account.credit.created",
+              "label": "account.credit.created"
+            },
+            {
+              "value": "account.credit.updated",
+              "label": "account.credit.updated"
+            },
+            {
+              "value": "account.credit.deleted",
+              "label": "account.credit.deleted"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_cart",
+          "label": "Cart",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "cart.created",
+              "label": "cart.created"
+            },
+            {
+              "value": "cart.deleted",
+              "label": "cart.deleted"
+            },
+            {
+              "value": "cart.converted",
+              "label": "cart.converted"
+            },
+            {
+              "value": "cart.abandoned",
+              "label": "cart.abandoned"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_category",
+          "label": "Category",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "category.created",
+              "label": "category.created"
+            },
+            {
+              "value": "category.updated",
+              "label": "category.updated"
+            },
+            {
+              "value": "category.deleted",
+              "label": "category.deleted"
+            },
+            {
+              "value": "category.product.added",
+              "label": "category.product.added"
+            },
+            {
+              "value": "category.product.removed",
+              "label": "category.product.removed"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_coupon",
+          "label": "Coupon",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "coupon.created",
+              "label": "coupon.created"
+            },
+            {
+              "value": "coupon.updated",
+              "label": "coupon.updated"
+            },
+            {
+              "value": "coupon.deleted",
+              "label": "coupon.deleted"
+            },
+            {
+              "value": "coupon.code.created",
+              "label": "coupon.code.created"
+            },
+            {
+              "value": "coupon.code.deleted",
+              "label": "coupon.code.deleted"
+            },
+            {
+              "value": "coupon.generation.completed",
+              "label": "coupon.generation.completed"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_invoice",
+          "label": "Invoice",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "invoice.created",
+              "label": "invoice.created"
+            },
+            {
+              "value": "invoice.updated",
+              "label": "invoice.updated"
+            },
+            {
+              "value": "invoice.deleted",
+              "label": "invoice.deleted"
+            },
+            {
+              "value": "invoice.payment_succeeded",
+              "label": "invoice.payment_succeeded"
+            },
+            {
+              "value": "invoice.payment_failed",
+              "label": "invoice.payment_failed"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_order",
+          "label": "Order",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "order.created",
+              "label": "order.created"
+            },
+            {
+              "value": "order.updated",
+              "label": "order.updated"
+            },
+            {
+              "value": "order.deleted",
+              "label": "order.deleted"
+            },
+            {
+              "value": "order.submitted",
+              "label": "order.submitted"
+            },
+            {
+              "value": "order.canceled",
+              "label": "order.canceled"
+            },
+            {
+              "value": "order.paid",
+              "label": "order.paid"
+            },
+            {
+              "value": "order.payment_failed",
+              "label": "order.payment_failed"
+            },
+            {
+              "value": "order.refunded",
+              "label": "order.refunded"
+            },
+            {
+              "value": "order.delivered",
+              "label": "order.delivered"
+            },
+            {
+              "value": "order.trial_started",
+              "label": "order.trial_started"
+            },
+            {
+              "value": "order.trial_will_end",
+              "label": "order.trial_will_end"
+            },
+            {
+              "value": "order.trial_ended",
+              "label": "order.trial_ended"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_page",
+          "label": "Page",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "page.created",
+              "label": "page.created"
+            },
+            {
+              "value": "page.updated",
+              "label": "page.updated"
+            },
+            {
+              "value": "page.deleted",
+              "label": "page.deleted"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_payment",
+          "label": "Payment",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "payment.succeeded",
+              "label": "payment.succeeded"
+            },
+            {
+              "value": "payment.failed",
+              "label": "payment.failed"
+            },
+            {
+              "value": "payment.voided",
+              "label": "payment.voided"
+            },
+            {
+              "value": "payment.refund.succeeded",
+              "label": "payment.refund.succeeded"
+            },
+            {
+              "value": "payment.refund.failed",
+              "label": "payment.refund.failed"
+            },
+            {
+              "value": "payment.refund.voided",
+              "label": "payment.refund.voided"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_product",
+          "label": "Product",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "product.created",
+              "label": "product.created"
+            },
+            {
+              "value": "product.updated",
+              "label": "product.updated"
+            },
+            {
+              "value": "product.deleted",
+              "label": "product.deleted"
+            },
+            {
+              "value": "product.stock_adjusted",
+              "label": "product.stock_adjusted"
+            },
+            {
+              "value": "product.variant.created",
+              "label": "product.variant.created"
+            },
+            {
+              "value": "product.variant.updated",
+              "label": "product.variant.updated"
+            },
+            {
+              "value": "product.variant.deleted",
+              "label": "product.variant.deleted"
+            },
+            {
+              "value": "product.review.created",
+              "label": "product.review.created"
+            },
+            {
+              "value": "product.review.updated",
+              "label": "product.review.updated"
+            },
+            {
+              "value": "product.review.deleted",
+              "label": "product.review.deleted"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_promotion",
+          "label": "Promotion",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "promotion.created",
+              "label": "promotion.created"
+            },
+            {
+              "value": "promotion.updated",
+              "label": "promotion.updated"
+            },
+            {
+              "value": "promotion.deleted",
+              "label": "promotion.deleted"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_shipment",
+          "label": "Shipment",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "shipment.created",
+              "label": "shipment.created"
+            },
+            {
+              "value": "shipment.updated",
+              "label": "shipment.updated"
+            },
+            {
+              "value": "shipment.deleted",
+              "label": "shipment.deleted"
+            },
+            {
+              "value": "shipment.canceled",
+              "label": "shipment.canceled"
+            }
+          ],
+          "default": []
+        },
+        {
+          "id": "events_subscription",
+          "label": "Subscription",
+          "type": "checkboxes",
+          "options": [
+            {
+              "value": "subscription.created",
+              "label": "subscription.created"
+            },
+            {
+              "value": "subscription.updated",
+              "label": "subscription.updated"
+            },
+            {
+              "value": "subscription.deleted",
+              "label": "subscription.deleted"
+            },
+            {
+              "value": "subscription.activated",
+              "label": "subscription.activated"
+            },
+            {
+              "value": "subscription.trial_will_end",
+              "label": "subscription.trial_will_end"
+            },
+            {
+              "value": "subscription.trial_ended",
+              "label": "subscription.trial_ended"
+            },
+            {
+              "value": "subscription.invoiced",
+              "label": "subscription.invoiced"
+            },
+            {
+              "value": "subscription.payment_failed",
+              "label": "subscription.payment_failed"
+            },
+            {
+              "value": "subscription.paid",
+              "label": "subscription.paid"
+            },
+            {
+              "value": "subscription.canceled",
+              "label": "subscription.canceled"
+            },
+            {
+              "value": "subscription.paused",
+              "label": "subscription.paused"
+            },
+            {
+              "value": "subscription.resumed",
+              "label": "subscription.resumed"
+            },
+            {
+              "value": "subscription.completed",
+              "label": "subscription.completed"
+            }
+          ],
+          "default": []
+        }
+      ]
+    }
+  ]
+}

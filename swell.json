@@ -1,0 +1,28 @@
+{
+  "description": "Send store events to Segment automatically",
+  "id": "segment",
+  "name": "Segment",
+  "type": "integration",
+  "version": "1.0.0",
+  "permissions": [],
+  "images": [
+    {
+      "id": "settings",
+      "title": "Connect with your write key",
+      "description": "Paste your Segment source write key and pick the region of your workspace.",
+      "image_src": "assets/screenshots/settings.png"
+    },
+    {
+      "id": "events",
+      "title": "Choose which events to send",
+      "description": "Select store events by model: orders, carts, accounts, products, subscriptions and more.",
+      "image_src": "assets/screenshots/events.png"
+    },
+    {
+      "id": "segment-debugger",
+      "title": "Events in Segment",
+      "description": "Events arrive in Segment as readable names like Order Paid and Cart Converted, with the full record as properties.",
+      "image_src": "assets/screenshots/segment-debugger.png"
+    }
+  ]
+}
