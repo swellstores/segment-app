@@ -115,6 +115,7 @@ If you used the built-in Segment integration, turn it off in **Settings → Inte
 
 ```
 swell.json                  App manifest (id: segment, type: integration)
+DESCRIPTION.md              Short app description for the listing
 assets/icon.png             App icon (placeholder)
 assets/screenshots/         Listing screenshots referenced by swell.json "images"
 settings/segment.json       Settings: write key, region, enabled, event checkboxes
