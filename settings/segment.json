@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.swell.store/setting.json",
   "label": "Segment",
-  "description": "Send store events to Segment, then on to Google Analytics, Intercom, HubSpot and other Segment destinations.",
+  "description": "Send store events to Segment as track calls.",
   "fields": [
     {
       "id": "write_key",
