@@ -6,7 +6,7 @@
     {
       "id": "write_key",
       "label": "Segment write key",
-      "type": "short_text",
+      "type": "secret",
       "required": true,
       "description": "Find and enter the write key from your Segment account (Connections \u2192 Sources \u2192 your source \u2192 Settings \u2192 API Keys)."
     },
