@@ -1,40 +1,40 @@
 {
-  "description": "Send store events to Segment automatically",
-  "id": "segment",
-  "name": "Segment",
-  "type": "integration",
-  "version": "1.0.0",
-  "permissions": [],
-  "support_email": "support@swell.is",
-  "documentation_url": "https://developers.swell.is/app-guides/segment",
-  "price_external": true,
-  "integrations": [
-    "segment"
-  ],
-  "images": [
-    {
-      "id": "store-events",
-      "title": "Store events in Segment",
-      "description": "Store events arrive in Segment as track calls with readable names, like Order Paid, and the full record as properties.",
-      "image_src": "assets/images/1-store-events.png"
-    },
-    {
-      "id": "choose-events",
-      "title": "Send only the events you need",
-      "description": "Choose events by model: orders, carts, customers, products, subscriptions and more. Unchecked events are never sent.",
-      "image_src": "assets/images/2-choose-events.png"
-    },
-    {
-      "id": "setup",
-      "title": "Connected in a few minutes",
-      "description": "Copy your write key from Segment, paste it in the app settings and pick your region, US or EU.",
-      "image_src": "assets/images/3-setup.png"
-    },
-    {
-      "id": "switch-from-built-in",
-      "title": "Switch from the built-in integration",
-      "description": "Install the app and turn off the built-in integration in one step. Events keep the same names and data.",
-      "image_src": "assets/images/4-switch-from-built-in.png"
-    }
-  ]
+	"description": "Send store events to Segment automatically",
+	"id": "segment",
+	"name": "Segment",
+	"type": "integration",
+	"version": "1.0.1",
+	"permissions": [],
+	"support_email": "support@swell.is",
+	"documentation_url": "https://developers.swell.is/app-guides/segment",
+	"price_external": true,
+	"integrations": [
+		"segment"
+	],
+	"images": [
+		{
+			"id": "store-events",
+			"title": "Store events in Segment",
+			"description": "Store events arrive in Segment as track calls with readable names, like Order Paid, and the full record as properties.",
+			"image_src": "assets/images/1-store-events.png"
+		},
+		{
+			"id": "choose-events",
+			"title": "Send only the events you need",
+			"description": "Choose events by model: orders, carts, customers, products, subscriptions and more. Unchecked events are never sent.",
+			"image_src": "assets/images/2-choose-events.png"
+		},
+		{
+			"id": "setup",
+			"title": "Connected in a few minutes",
+			"description": "Copy your write key from Segment, paste it in the app settings and pick your region, US or EU.",
+			"image_src": "assets/images/3-setup.png"
+		},
+		{
+			"id": "switch-from-built-in",
+			"title": "Switch from the built-in integration",
+			"description": "Install the app and turn off the built-in integration in one step. Events keep the same names and data.",
+			"image_src": "assets/images/4-switch-from-built-in.png"
+		}
+	]
 }
