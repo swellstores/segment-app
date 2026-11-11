@@ -2,6 +2,15 @@
   "$schema": "https://json.swell.store/setting.json",
   "label": "Segment",
   "description": "Send store events to Segment as track calls.",
+  "actions": [
+    {
+      "id": "test_connection",
+      "label": "Test connection",
+      "function": "test-connection",
+      "loading_label": "Testing…",
+      "hint": "Checks that Segment recognizes the write key and region"
+    }
+  ],
   "fields": [
     {
       "id": "write_key",

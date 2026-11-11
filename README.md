@@ -123,6 +123,7 @@ assets/screenshots/         Screenshots used in this README
 settings/segment.json       Settings: write key, region, enabled, event checkboxes
 functions/lib/segment.ts    Shared logic: event list, naming, payload, Segment client, handler
 functions/track-<group>.ts  One model-event function per event group, delegating to the shared handler
+functions/test-connection.ts  Settings action: checks that Segment knows the write key and its region
 test/unit/                  Unit tests (mocked fetch and Swell client)
 test/integration/           Read-only checks against the logged-in test store
 ```
