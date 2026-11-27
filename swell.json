@@ -1,5 +1,6 @@
 {
 	"description": "Send store events to Segment automatically",
+	"repository_url": "https://github.com/swellstores/segment-app",
 	"id": "segment",
 	"name": "Segment",
 	"type": "integration",

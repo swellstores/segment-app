@@ -161,3 +161,7 @@ swell logs --type function --app segment -s track-cart
 You should see `Segment: tracked 'Cart Created' (cart.created)` and the event in the Segment debugger.
 
 `swell app dev` runs the functions locally against the test environment with console output in your terminal.
+
+## License
+
+MIT. See [LICENSE](LICENSE). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
